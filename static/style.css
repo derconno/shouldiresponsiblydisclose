@@ -1,6 +1,12 @@
+:root {
+  --bg-color: #fafafa;
+  --bg-color-offset: #cccccc;
+  --fg-color: #111111;
+}
+
 body {
-  color: #111111;
-  background-color: #fafafa;
+  color: var(--fg-color);
+  background-color: var(--bg-color);
   font-size: 15px;
   font-family: Verdana, sans-serif;
   margin: 0;
@@ -30,8 +36,8 @@ main, dialog {
 footer {
   grid-area: footer;
   padding: 0.5em 0;
-  background-color: #cccccc;
-  color: black;
+  background-color: var(--bg-color-offset);
+  color: var(--fg-color);
 }
 
 dialog::backdrop {
