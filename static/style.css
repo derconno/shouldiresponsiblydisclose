@@ -25,6 +25,10 @@ dialog::backdrop {
   backdrop-filter: blur(2px);
 }
 
+a {
+  color: #111111;
+}
+
 h1 {
     font-size: 80px;
     margin-bottom: 0;
