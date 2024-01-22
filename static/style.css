@@ -1,14 +1,75 @@
+:root {
+  --bg-color: #fafafa;
+  --bg-color-offset: #cccccc;
+  --fg-color: #111111;
+}
+
+body {
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 
+    min-content 
+    1fr
+    min-content;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+main {
+  grid-area: main;
+  height: 100%;
+  overflow: auto;
+}
+
+main, dialog {
+  margin: auto;
+  max-width: 900px;
+}
+
+footer {
+  grid-area: footer;
+  padding: 0.5em 0;
+  background-color: var(--bg-color-offset);
+  color: var(--fg-color);
+}
+
+dialog::backdrop {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+a {
+  color: #111111;
+}
+
 h1 {
     font-size: 80px;
+    margin-bottom: 0;
 }
 .center {
     text-align: center;
 }
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: lightgray;
-    color: black;
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+hr {
+  margin: 1em 0;
+}
+
+.footnote {
+  font-style: italic;
 }
