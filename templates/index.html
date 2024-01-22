@@ -1,36 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/w3.css">
-    <link rel="stylesheet" href="/static/style.css">
-    <title>Should I do responsible disclosure?</title>
-  </head>
-  <body>
-    <div class="center" style="margin-bottom: 30px">
-      <h1>No.*</h1>
-      <p>*At least not to these guys, because they might sue you
-        <a href="https://www.gesetze-im-internet.de/stgb/__202c.html">under german law</a>**:</p>
-      {{range .}}<p>{{.Name}}: <a href="{{.Src}}" target="_blank">{{.Src}}</a></p>{{end}}
-      <p>**This is not legal advice. Just be careful what you are doing out there</p>
-    </div>
-    <div id="butiwanna-modal" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
-          <span onclick="document.getElementById('butiwanna-modal').style.display='none'"
-                class="w3-button w3-display-topright">&times;</span>
-          <p>Why not take a look at open source software? Usually it is easier to find and exploit vulnerabilities if
-            you can look at the code! Also, open source communities are by nature more welcoming towards meaningful
-            contributions.</p>
-          <p>If you did find a vulnerability in a proprietary software or library, an option would be to disclose it
-            without revealing your identity. The Chaos Computer Club can help you with that:
-            <a href="https://www.ccc.de/disclosure" target="_blank">https://www.ccc.de/disclosure</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="footer center">
-      <a href="#" onclick="document.getElementById('butiwanna-modal').style.display='block'">But me wanna hack!</a> |
-      <a href="/submit">submit</a> another case
-    </div>
-  </body>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <title>Should I do responsible disclosure?</title>
+</head>
+
+<body>
+  <main>
+    <hgroup class="center">
+      <h1> No.*</h1>
+      <p class="footnote">
+        *At least not to these guys, because they might sue you
+        <a href="https://www.gesetze-im-internet.de/stgb/__202c.html">under german law</a>**:
+      </p>
+    </hgroup>
+    <dl>
+      {{range .}}
+      <dt>{{.Name}}</dt>
+      <dd><a href="{{.Src}}" target="_blank">{{.Src}}</a></dd>
+      {{end}}
+    </dl>
+    <hr />
+    <p class="footnote">
+      **This is not legal advice. Just be careful what you are doing out there!
+    </p>
+  </main>
+  <dialog id="butiwanna-modal">
+    <p>
+      Why not take a look at open source software? Usually it is easier to
+      find and exploit vulnerabilities if you can look at the code! Also, open
+      source communities are by nature more welcoming towards meaningful
+      contributions.
+    </p>
+    <p>
+      If you did find a vulnerability in a proprietary software or library, an
+      option would be to disclose it without revealing your identity. The
+      Chaos Computer Club can help you with that:
+      <a href="https://www.ccc.de/disclosure" target="_blank">https://www.ccc.de/disclosure</a>
+    </p>
+    <form method="dialog">
+      <button>OK</button>
+    </form>
+  </dialog>
+  <footer class='center'>
+    <a href="#" onclick="document.getElementById('butiwanna-modal').showModal()">But me wanna hack!</a>
+    | <a href="/submit">submit</a> another case
+  </footer>
+</body>
+
 </html>

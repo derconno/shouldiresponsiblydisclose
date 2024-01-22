@@ -1,14 +1,51 @@
+body {
+  background-color: #fafafa;
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+  color: #111111;
+}
+
+main, dialog {
+  max-width: 900px;
+  margin: auto;
+}
+
+footer {
+    position: fixed;
+    padding: 0.5em 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #cccccc;
+    color: black;
+}
+
+dialog::backdrop {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
 h1 {
     font-size: 80px;
+    margin-bottom: 0;
 }
 .center {
     text-align: center;
 }
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: lightgray;
-    color: black;
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+hr {
+  margin: 1em 0;
+}
+
+.footnote {
+  font-style: italic;
 }
