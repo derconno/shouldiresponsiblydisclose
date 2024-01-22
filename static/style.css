@@ -1,23 +1,37 @@
 body {
+  color: #111111;
   background-color: #fafafa;
   font-size: 15px;
   font-family: Verdana, sans-serif;
-  color: #111111;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 
+    min-content 
+    1fr
+    min-content;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+main {
+  grid-area: main;
+  height: 100%;
+  overflow: auto;
 }
 
 main, dialog {
-  max-width: 900px;
   margin: auto;
+  max-width: 900px;
 }
 
 footer {
-    position: fixed;
-    padding: 0.5em 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: #cccccc;
-    color: black;
+  grid-area: footer;
+  padding: 0.5em 0;
+  background-color: #cccccc;
+  color: black;
 }
 
 dialog::backdrop {
